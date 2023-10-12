@@ -8,8 +8,9 @@ const dummyContacts = [
   { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
 ];
 
-function ContactList() {
+function ContactList({ setSelectedContactId }) {
   const [contacts, setContacts] = useState(dummyContacts)
+  setSelectedContactId = { setSelectedContactId }
 
   useEffect(() => {
     async function fetchContacts() {
@@ -47,3 +48,9 @@ function ContactList() {
 }
 
 export default ContactList
+
+
+// Create new component for selectedContact
+// On click of an individual row, selects the contact of that row
+// To select the individual contact, utilize the contact id
+//  to go into App.jsx const [selectedContact, selectContact] = useState(contacts)
